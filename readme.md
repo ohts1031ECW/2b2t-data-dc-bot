@@ -1,0 +1,1 @@
+このdiscord botは2b2t.vcと2b2t.devのapiを使用して2b2tのプレイヤーデータや統計を取得するdiscordbotです
