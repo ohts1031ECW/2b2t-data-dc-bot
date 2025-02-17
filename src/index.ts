@@ -19,18 +19,13 @@ const client: Client = new Client({
     ]
 })
 
-//test
-client.on(Events.ClientReady, (client: Client) => {
-    console.log("logged in as: ", client.user?.tag)
-})
-
 
 //load Event Files
 const EventFilePath: string = path.join(__dirname, "Events");
 const EventFiles: string[] = fs.readdirSync(EventFilePath).filter(file => file.endsWith("ts") || file.endsWith("js"));
 for (const File of EventFiles) {
     import(`${EventFilePath}/${File}`).then((rawdata) => {
-        const Event: EventTypeBase = rawdata;
+        const Event: EventTypeBase = rawdata.Event;
 
         if (Event.once) {
             client.once(Event.name, async (...args) => Event.execute(...args));
@@ -40,7 +35,4 @@ for (const File of EventFiles) {
     })
 }
 
-console.log(EventFilePath)
-console.log(EventFiles)
-
-//client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);

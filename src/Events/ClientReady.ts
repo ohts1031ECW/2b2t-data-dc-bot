@@ -1,10 +1,11 @@
-import { Events } from "discord.js";
+import { Client, Events } from "discord.js";
 import { EventTypeBase } from "../types";
 
 export const Event:EventTypeBase = {
     name: Events.ClientReady,
     once: true,
-    execute: async()=>{
-
+    execute: async(client:Client)=>{
+        console.log("bot booted");
+        console.log("logged in as: ",client.user?.tag);
     }
 }
