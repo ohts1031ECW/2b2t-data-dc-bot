@@ -1,5 +1,5 @@
 import { Client, Events } from "discord.js";
-import { EventTypeBase } from "../types";
+import { EventTypeBase } from "../types/types";
 
 export const Event:EventTypeBase = {
     name: Events.ClientReady,
