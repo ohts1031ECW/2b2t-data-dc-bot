@@ -14,7 +14,11 @@ interface CommandType {
 interface CustomArgsType {
     prefix: string,
     Commands: Collection<string, CommandType>
-    baseURL: object,
+    baseURL: {
+        "2b2t.vc": string,
+        "mojangAPI": string,
+        "mojangAPI-sub": string
+    },
     client: Client
 
 }

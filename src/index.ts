@@ -32,6 +32,8 @@ const CustomArgs:CustomArgsType = {
     baseURL: {
         "2b2t.vc": "https://api.2b2t.vc/",
         //"2b2t.dev": "https://api.2b2t.dev/" dead
+        "mojangAPI": "https://api.mojang.com/users/profiles/minecraft/",
+        "mojangAPI-sub": "https://api.minecraftservices.com/minecraft/profile/lookup/name/"
     }
 }
 
