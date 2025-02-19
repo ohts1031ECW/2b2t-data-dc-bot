@@ -19,7 +19,9 @@ export const Event:EventTypeBase = {
         const CommandData = [];
         for(const command of CustomArgs.Commands){
             CommandData.push(command[1].data);
+            //console.log(command[1].data)
         }
+
         //register slash commands
         try {
             
