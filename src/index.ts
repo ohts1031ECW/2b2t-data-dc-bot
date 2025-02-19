@@ -40,10 +40,11 @@ const CustomArgs:CustomArgsType = {
 //load Event Files
 const EventFilePath: string = path.join(__dirname, "Events");
 const EventFiles: string[] = fs.readdirSync(EventFilePath).filter(file => file.endsWith("ts") || file.endsWith("js"));
+console.log("Events loading")
 for (const File of EventFiles) {
     import(`${EventFilePath}/${File}`).then((rawdata) => {
         const Event: EventTypeBase = rawdata.Event;
-        console.log("Events loading")
+
         console.log(`${Event.name} was loaded.`);
 
         if (Event.once) {
@@ -59,11 +60,12 @@ for (const File of EventFiles) {
 //load command
 const CommandFilePath:string = path.join(__dirname,"Commands");
 const CommandFiles:string[] = fs.readdirSync(CommandFilePath).filter( file => file.endsWith("ts") || file.endsWith("js"));
+console.log("Commands loading")
 for(const File of CommandFiles){
     import(`${CommandFilePath}/${File}`).then((rawdata)=>{
         const Command:CommandType = rawdata.Command;
         CustomArgs.Commands.set(Command.data.name,Command);
-        console.log("Commands loading")
+
         console.log(`${Command.data.name} was loaded`)
     })
 }

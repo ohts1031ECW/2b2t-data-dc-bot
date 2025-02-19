@@ -4,7 +4,8 @@ import { CommandType } from "../types/types";
 export const Command:CommandType = {
     data: new SlashCommandBuilder()
     .setName("ping")
-    .setDescription("a"),
+    .setDescription("bot test command"),
+
     execute: async(message:Message)=>{
         message.reply("pong")
     }
