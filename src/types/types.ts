@@ -1,4 +1,4 @@
-import { Client, Collection, Interaction, SlashCommandBuilder, SlashCommandOptionsOnlyBuilder, SlashCommandSubcommandBuilder, SlashCommandSubcommandsOnlyBuilder } from "discord.js"
+import { Client, Collection, SlashCommandBuilder, SlashCommandOptionsOnlyBuilder} from "discord.js"
 
 interface EventTypeBase {
     name: string,
