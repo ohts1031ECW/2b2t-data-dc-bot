@@ -1,4 +1,4 @@
-import { Client, Collection, SlashCommandBuilder, SlashCommandOptionsOnlyBuilder} from "discord.js"
+import { ChatInputCommandInteraction, Client, Collection, Interaction, Message, SlashCommandBuilder, SlashCommandOptionsOnlyBuilder} from "discord.js"
 
 interface EventTypeBase {
     name: string,
@@ -19,11 +19,21 @@ interface CustomArgsType {
         "mojangAPI": string,
         "mojangAPI-sub": string
     },
-    client: Client
-
+    //client: Client
 }
+
+interface executeArgsType {
+    interaction?: ChatInputCommandInteraction,
+    message?: Message,
+    type: number,
+    TextArgs: string[],
+    CustomArgs: CustomArgsType
+}
+
+
 export {
     EventTypeBase,
     CommandType,
-    CustomArgsType
+    CustomArgsType,
+    executeArgsType
 }
