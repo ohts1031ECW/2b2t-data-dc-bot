@@ -28,7 +28,7 @@ const client: Client = new Client({
 const CustomArgs:CustomArgsType = {
     prefix: "%",
     Commands:  new Collection(),
-    client: client,
+    //client: client,
     baseURL: {
         "2b2t.vc": "https://api.2b2t.vc/",
         //"2b2t.dev": "https://api.2b2t.dev/" dead
